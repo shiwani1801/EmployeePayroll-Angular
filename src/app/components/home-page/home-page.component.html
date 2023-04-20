@@ -1,0 +1,61 @@
+<app-header></app-header>
+
+<div class="main-content">
+    <div class="header-content">
+      <div class="emp-detail-text">
+        Employee Details <div class="emp-count">{{employeeCount}}</div>
+      </div>
+      <a class="add-button" routerLink="/add-employee">
+        <img src="../assets/icons/add-24px.svg" style="margin-left: 10px;" alt="">Add Employee</a>
+    </div> <!-- header-content-->
+    <div class="table-main">
+      <table id ="table-display" class="table">
+          <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>Department</th>
+              <th>Salary</th>
+              <th>Start Date</th>
+              <th>Actions</th>
+          </tr>
+          <!-- <tr>
+              <td>
+                  <img class="profile" src="../assets/profile-images/Ellipse -4.png" alt="">
+              </td>
+              <td>Shiwani</td>
+              <td>Female</td>
+              <td>
+                  Finance
+              </td>
+              <td>600000</td>
+              <td>09 Oct 2021</td>
+              <td>
+                  <img id=1 src="../assets/icons/delete-black-18dp.svg" alt="delete">
+                  &nbsp;
+                  <img id=1 src="../assets/icons/create-black-18dp.svg" alt="edit"> 
+              </td>
+          </tr> -->
+          <tr *ngFor="let employee of employeeDetails">
+              <td>
+                  <img class="profile" src="{{employee.profilePic}}" alt="">
+              </td>
+              <td>{{employee.name}}</td>
+              <td>{{employee.gender}}</td>
+              <td>
+                  <div class="dept-label" *ngFor="let department of employee.department">
+                      {{department}}
+                  </div>
+              </td>
+              <td>{{employee.salary | currency:'INR'}}</td>
+              <td>{{employee.startDate | date: 'dd MMM yyyy'}}</td>
+              <td>
+                  <img id="{{employee.id}}" src="../assets/icons/delete-black-18dp.svg" alt="delete" (click)="remove(employee.id)">
+                  &nbsp;
+                  <img id="{{employee.id}}" src="../assets/icons/create-black-18dp.svg" alt="edit" (click)="update(employee)"> 
+              </td>
+          </tr>
+      </table>  
+  </div>
+  </div>
+  

@@ -1,0 +1,227 @@
+$color-white: #fff;
+$button-background-color: #42515F;
+.main-content {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 80px);
+  background-color: #f7f7f7;
+  padding: 30px 0 10px;
+  box-sizing: border-box;
+
+  .header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 25px;
+
+    .emp-detail-text {
+      font: normal normal bold 24px/25px Roboto;
+      letter-spacing: 0;
+      color: #42515f;
+      opacity: 1;
+
+      .emp-count {
+        background-color: $button-background-color;
+        color: $color-white;
+        border-radius: 42%;
+        padding: 2px 2px 0 2px;
+        margin-left: 10px;
+        font-size: 16px;
+        width: 26px;
+        text-align: center;
+        display: inline-block;
+      }
+    }
+
+    .add-button {
+      font: normal normal normal 22px/29px Roboto;
+      letter-spacing: 0;
+      color: $color-white;
+      opacity: 1;
+      background: #87aa14;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 18px;
+      outline: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .add-button:active {
+      font: normal normal normal 20px/28px Roboto;
+    }
+  }
+
+  .table-main {
+    width: 80%;
+    margin: 0 auto;
+    overflow: auto;
+
+    .table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 4px;
+      min-width: 800px;
+
+      td, th {
+        text-align: left;
+        padding: 7px 16px;
+      }
+
+      th {
+        background: #42515F no-repeat padding-box;
+        font: normal normal normal 17px/21px Roboto;
+        letter-spacing: 0;
+        color: $color-white;
+        text-transform: uppercase;
+        opacity: 2;
+        border: 0 solid #dddddd;
+        width: fit-content;
+        padding: 1.25%;
+      }
+
+      tr:not(:first-child) {
+        background: white no-repeat;
+        border: 1px solid #e3e3e3;
+        border-radius: 3px;
+      }
+
+      td {
+        font: normal normal normal 14px/21px Roboto;
+        letter-spacing: 0;
+        color: #3d3d3d;
+        opacity: 1;
+        background-color: $color-white;
+      }
+
+      td:first-child {
+        display: flex;
+        align-items: center;
+      }
+
+      td img:first-child {
+        margin-left: 10px;
+      }
+
+      td img, i {
+        cursor: pointer;
+      }
+
+      .dept-label {
+        font: normal normal normal 17px/21px Roboto;
+        margin-inline: 3px;
+        background-color: #e9fea5;
+        border-radius: 30%;
+        width: fit-content;
+        padding: 1px 9px;
+        text-align: left;
+        letter-spacing: 0;
+        text-transform: capitalize;
+        font-size: 14px;
+        display: inline-table;
+        font-weight: 450;
+        margin-bottom: 8px;
+        opacity: 1;
+      }
+
+      .profile {
+        background-color: aqua;
+        border-radius: 18px;
+      }
+    }
+  }
+}
+
+// #Search Bar
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+.box{
+  margin-left: 30%;
+  max-width: 250px;
+  width: 100%;
+}
+
+.box .search-box{
+  position: relative;
+  left: 8rem;
+  height: 34px;
+  max-width: 30px;
+  margin-left: auto;
+  border-radius: 25px;
+  transition: all 0.6s ease;
+}
+
+#check:checked ~ .search-box{
+  max-width: 300px;
+}
+
+.search-box input{
+ position: absolute;
+ height: 100%;
+ width: 100%;
+ border-radius: 25px;
+ background: #fff;
+ outline: none;
+ border: none;
+ padding-left: 20px;
+ font-size: 18px;
+}
+
+.search-box .icon{
+  position: absolute;
+  right: -2px;
+  width: 40px;
+  background-color: #f7f7f7;
+  height: 35px;
+  text-align: center;
+  line-height: 40px;
+  color: #FFF;
+  font-size: 15px;
+  border-radius: 25px;
+}
+
+.search-box .icon:hover {
+  font-size: 20px;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+#check:checked ~ .search-box .icon{
+  background: $button-background-color;
+  color: #FFF;
+  width: 50px;
+  border-radius: 0 25px 25px 0;
+}
+
+#check{
+  display: none;
+}
+
+// #Hover On Delete And Edit
+.fas.fa-trash-alt:hover{
+  color: red;
+}
+
+.fas.fa-trash-alt:active{
+  font-size: 150%;
+}
+
+.fas.fa-edit:hover{
+  color: rgb(4, 121, 255);
+}
+
+.fas.fa-edit:active{
+  font-size: 150%;
+}   
+
+
